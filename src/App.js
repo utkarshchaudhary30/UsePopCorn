@@ -93,7 +93,7 @@ useEffect(function(){
     const controller = new AbortController();
    try {setisloading(true);
     seterror("");
-    const res= await fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,{signal:controller.signal})
+    const res= await fetch(`http://www.omdbapi.com/?apikey=${MOVIE_API_KEY}&s=${query}`,{signal:controller.signal})
     if(!res.ok) throw new Error("something wrong with loading the movies")
     const data= await res.json();
     if(data.Response ==='False') throw new Error("Movie not found");
